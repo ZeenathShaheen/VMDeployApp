@@ -41,3 +41,9 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Web Artifact'
+  inputs:
+   ArtifactName: sample-web
+   PathtoPublish: $(build.artifactStagingDirectory)
